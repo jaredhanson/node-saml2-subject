@@ -48,6 +48,18 @@ describe('subject confirmation with bearer method', function() {
     });
   });
   
+  describe('confirming assertion that is not yet active', function() {
+    var xml = fs.readFileSync(__dirname + '/../data/BearerThatIsNotYetActive.xml', 'utf8');
+    
+    it('should not be confirmed', function(done) {
+      confirmer.confirm(xml, function(err, ok) {
+        if (err) return done(err);
+        expect(ok).to.be.false;
+        done();
+      });
+    });
+  });
+  
 });
 
 describe('subject confirmation with bearer method using address', function() {
@@ -86,7 +98,7 @@ describe('subject confirmation with bearer method that encounters an error', fun
   describe('confirming assertion with expected values', function() {
     var xml = fs.readFileSync(__dirname + '/../data/Bearer.xml', 'utf8');
     
-    it('should be confirmed', function(done) {
+    it('should fail with error', function(done) {
       confirmer.confirm(xml, function(err, ok) {
         expect(err).to.be.instanceof(Error);
         expect(ok).to.be.undefined;
