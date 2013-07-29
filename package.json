@@ -28,7 +28,8 @@
   "dependencies": {
     "xmldom": "0.1.x",
     "xtraverse": "0.0.x",
-    "moment": "2.x.x"
+    "moment": "2.x.x",
+    "saml2-nameid": "0.0.x"
   },
   "devDependencies": {
     "mocha": "1.x.x",
