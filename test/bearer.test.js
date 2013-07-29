@@ -23,6 +23,18 @@ describe('Bearer confirmation method', function() {
       });
     });
   });
+  
+  describe('confirming data with unexpected values', function() {
+    var xml = fs.readFileSync(__dirname + '/data/bearer-wrong-recipient.xml', 'utf8');
+    
+    it('should be confirmed', function(done) {
+      confirmer.confirm(xml, function(err, ok) {
+        if (err) return done(err);
+        expect(ok).to.be.false;
+        done();
+      });
+    });
+  });
     
   describe('confirming expired data', function() {
     var xml = fs.readFileSync(__dirname + '/data/bearer-expired.xml', 'utf8');
