@@ -16,9 +16,12 @@ describe('subject confirmation with bearer method', function() {
     var xml = fs.readFileSync(__dirname + '/../data/Bearer.xml', 'utf8');
     
     it('should be confirmed', function(done) {
-      confirmer.confirm(xml, function(err, ok) {
+      confirmer.confirm(xml, function(err, ok, sub) {
         if (err) return done(err);
         expect(ok).to.be.true;
+        expect(sub).to.be.an('object');
+        expect(sub.format).to.equal('transient');
+        expect(sub.id).to.equal('_00000000aaa0a0a00a000aa0a00aa00aa000a000a0');
         done();
       });
     });
@@ -78,9 +81,12 @@ describe('subject confirmation with bearer method using address', function() {
     var xml = fs.readFileSync(__dirname + '/../data/BearerWithAddress.xml', 'utf8');
     
     it('should be confirmed', function(done) {
-      confirmer.confirm(xml, function(err, ok) {
+      confirmer.confirm(xml, function(err, ok, sub) {
         if (err) return done(err);
         expect(ok).to.be.true;
+        expect(sub).to.be.an('object');
+        expect(sub.format).to.equal('transient');
+        expect(sub.id).to.equal('_00000000aaa0a0a00a000aa0a00aa00aa000a000a0');
         done();
       });
     });
