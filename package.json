@@ -1,0 +1,43 @@
+{
+  "name": "saml2-subject",
+  "version": "0.0.1",
+  "description": "Confirm the subject of a SAML assertion.",
+  "keywords": [
+    "saml",
+    "assertion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaredhanson/node-saml2-subject.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jaredhanson/node-saml2-subject/issues"
+  },
+  "author": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "http://www.jaredhanson.net/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib",
+  "dependencies": {
+    "xmldom": "0.1.x",
+    "xtraverse": "0.0.x",
+    "moment": "2.x.x"
+  },
+  "devDependencies": {
+    "mocha": "1.x.x",
+    "chai": "1.x.x"
+  },
+  "scripts": {
+    "test": "NODE_PATH=./lib node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  }
+}
