@@ -27,7 +27,6 @@
   "main": "./lib",
   "dependencies": {
     "moment": "2.x.x",
-    "xmldom": "0.1.x",
     "xtraverse": "0.1.x",
     "saml2-nameid": "0.0.x"
   },
